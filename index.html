@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Work Reminder</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <p class="eyebrow">Daily planner</p>
+        <h1>Daily Work Reminder</h1>
+      </header>
+
+      <section class="panel">
+        <div class="summary">
+          <div>
+            <p class="date-label" id="dateLabel"></p>
+            <h2 id="progressText">0% complete</h2>
+          </div>
+          <div class="progress-track" aria-label="Daily work progress">
+            <span id="progressBar"></span>
+          </div>
+        </div>
+
+        <form id="taskForm" class="task-form">
+          <input
+            id="taskInput"
+            type="text"
+            placeholder="Add a work task"
+            aria-label="Add a work task"
+            maxlength="80"
+            required
+          />
+          <button type="submit">Add task</button>
+        </form>
+
+        <div class="reminder-box">
+          <label for="reminderTime">Daily reminder time</label>
+          <div class="reminder-actions">
+            <input id="reminderTime" type="time" />
+            <button id="saveReminderBtn" type="button">Save reminder</button>
+            <button id="testReminderBtn" class="secondary" type="button">Test reminder</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="list-panel">
+        <div class="list-header">
+          <h3>Today's tasks</h3>
+          <button id="clearCompletedBtn" class="ghost" type="button">Clear done</button>
+        </div>
+        <ul id="taskList" aria-live="polite"></ul>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
